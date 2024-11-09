@@ -45,25 +45,29 @@ Display();
 void StartingPopulation(){
 cout << "Please enter starting population (greater than 2)"<<endl;
   cin >> organisms;
-  if (organisms < 2)
+  if (organisms < 2){
     cout << "Must be greater than 2."<<endl;
-
+  abort();
+  }
 }
 
 void PopulationIncrease(){
 
 cout << "Please enter average daily population increase (as a percentage)"<<endl;
   cin >> increase;
-  if (increase < 0)
+  if (increase < 0){
     cout << "Increase cannot be negative." << endl;
-
+  abort();
+  }
 }
 
 void DaysMultiply(){
 cout << "Please enter number of days they will multiply"<<endl;
 cin >> days;
-  if (days < 1)
+  if (days < 1){
     cout << "Days must be greater than 1."<<endl;
+    abort();
+  }
 }
 
 void Display(){
