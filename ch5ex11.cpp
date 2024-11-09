@@ -18,4 +18,63 @@
 
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
+
+double organisms;
+double increase;
+double days;
+double increaseRate;
+
+void StartingPopulation();
+void PopulationIncrease();
+void DaysMultiply();
+void Display();
+
+int main()
+
+{
+StartingPopulation();
+PopulationIncrease();
+DaysMultiply();
+Display();
+
+  return 0;
+}
+
+void StartingPopulation(){
+cout << "Please enter starting population (greater than 2)"<<endl;
+  cin >> organisms;
+  if (organisms < 2)
+    cout << "Must be greater than 2."<<endl;
+
+}
+
+void PopulationIncrease(){
+
+cout << "Please enter average daily population increase (as a percentage)"<<endl;
+  cin >> increase;
+  if (increase < 0)
+    cout << "Increase cannot be negative." << endl;
+
+}
+
+void DaysMultiply(){
+cout << "Please enter number of days they will multiply"<<endl;
+cin >> days;
+  if (days < 1)
+    cout << "Days must be greater than 1."<<endl;
+}
+
+void Display(){
+
+increaseRate = increase / 100.0;
+  cout << fixed << setprecision(2);
+  cout << "Day\tPopulation" << endl;
+
+  for (int newDay = 1; newDay <= days; newDay++){
+cout << newDay << "\t" << organisms << endl;
+    organisms += organisms * increaseRate;
+  }
+  
+}
